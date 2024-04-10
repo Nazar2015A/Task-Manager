@@ -1,4 +1,5 @@
-import React, { useParams } from "react";
+import React from "react";
+import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { motion } from "framer-motion";
 import {
