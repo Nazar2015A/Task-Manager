@@ -2,7 +2,6 @@ import React from "react";
 import { SignupSchema } from "../ModalSchema";
 import { Formik, Field } from "formik";
 import { Checkbox, FormControlLabel, TextField } from "@mui/material";
-import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
 import DatePickerField from "./DatePicker/DatePickerField";
 import {
   StyledBtnContainer,

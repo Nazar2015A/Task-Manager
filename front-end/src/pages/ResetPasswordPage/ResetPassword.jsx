@@ -1,6 +1,5 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   StyledContainer,
