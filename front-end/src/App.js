@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter as Router } from "react-router-dom";
+import { HashRouter as Router } from "react-router-dom";
 import { Box, styled } from "@mui/material";
 
 import AnimatedRoutes from "./route/AnimatedRoutes";
@@ -26,7 +26,6 @@ const StyledContainer = styled(Box)`
   margin: 0;
   min-height: calc(100vh - 100px);
   position: relative;
-
 `;
 const StyledRouterContainer = styled(Box)`
   width: 100%;
