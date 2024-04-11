@@ -1,5 +1,5 @@
 import React from "react";
-import { Navigate, Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import AllTasksPage from "../pages/alltasks/AllTasksPage";
 import ImportantPage from "../pages/important/ImportantPage";
 import CompletedPage from "../pages/completed/CompletedPage";
@@ -9,12 +9,13 @@ import LoginPage from "../pages/loginPage/LoginPage.component";
 import RegisterPage from "../pages/registerPage/RegisterPage.component";
 import PrivateRoute from "../components/PrivateRoute/PrivateRoute.component";
 import ForgotPasswordPage from "../pages/ForgotPassword/ForgotPasswordPage";
+import HomePage from "../pages/home/HomePage";
 
 const AnimatedRoutes = () => {
   const location = useLocation();
   return (
     <Routes location={location} key={location.pathname}>
-      <Route path="/" element={<Navigate to="/register" />} />
+      <Route path="/" element={<HomePage />} />
       <Route path="/register" element={<RegisterPage />} />
       <Route path="/login" element={<LoginPage />} />
 

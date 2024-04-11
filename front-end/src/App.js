@@ -12,7 +12,7 @@ import "@fontsource/roboto/900.css";
 function App() {
   return (
     <StyledContainer>
-      <Router>
+      <Router basename="/">
         <StyledRouterContainer>
           <AnimatedRoutes />
         </StyledRouterContainer>
