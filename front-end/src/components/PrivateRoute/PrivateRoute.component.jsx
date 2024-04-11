@@ -8,7 +8,6 @@ const PrivateRoute = () => {
   const { isAuth } = useSelector((state) => state.users);
   const [authChecked, setAuthChecked] = useState(false);
   const dispatch = useDispatch();
-  console.log(isAuth)
 
   useEffect(() => {
     const checkAuth = async () => {
