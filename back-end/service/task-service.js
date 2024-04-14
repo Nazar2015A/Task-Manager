@@ -30,7 +30,6 @@ class TaskService {
     important
   ) {
     if (!refreshToken) {
-      console.log("refreshToken", refreshToken)
       throw ApiError.UnauthorizedError("User is not authorized!");
     }
 

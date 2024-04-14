@@ -14,6 +14,7 @@ class TaskController {
   }
 
   async createTask(req, res, next) {
+    console.log(req.headers)
     try {
       const { userId, title, description, date, isCompleted, important } =
         req.body;
