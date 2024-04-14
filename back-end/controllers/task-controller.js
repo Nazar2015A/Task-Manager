@@ -80,28 +80,6 @@ class TaskController {
       next(e);
     }
   }
-
-  //   async getImportantTasks(req, res, next) {
-  //     try {
-  //       const { refreshToken } = req.cookies;
-  //       const allImportantTasks = await taskService.getImportantTasks(refreshToken);
-  //       return res.json(allImportantTasks);
-  //     } catch (e) {
-  //       console.log(e);
-  //       next(e);
-  //     }
-  //   }
-
-  //   async getCompletedTasks(req, res, next) {
-  //     try {
-  //         const { refreshToken } = req.cookies
-  //         const allCompletedTasks = await taskService.getCompletedTasks(refreshToken)
-  //         return res.json(allCompletedTasks)
-  //     } catch(e) {
-  //         console.log(e)
-  //         next(e)
-  //     }
-  //   }
 }
 
 module.exports = new TaskController();
