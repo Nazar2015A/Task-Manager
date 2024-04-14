@@ -5,16 +5,15 @@ const userModel = require("../models/user-model");
 
 class TaskService {
   async getAllTasks(user, limit) {
-
-    if(!user) {
-      throw ApiError.UnauthorizedError("User Unauthorized or not found!")
+    if (!user) {
+      throw ApiError.UnauthorizedError("User Unauthorized or not found!");
     }
 
     const userData = await userModel
       .findOne({ _id: user.id })
       .populate({
-        path: "tasks", 
-        options: {limit}
+        path: "tasks",
+        options: { limit },
       })
       .exec();
 
@@ -31,6 +30,7 @@ class TaskService {
     important
   ) {
     if (!refreshToken) {
+      console.log("refreshToken", refreshToken)
       throw ApiError.UnauthorizedError("User is not authorized!");
     }
 
@@ -114,62 +114,6 @@ class TaskService {
 
     return deletedTask;
   }
-
-  // async getImportantTasks(refreshToken) {
-  //   if (!refreshToken) {
-  //     throw ApiError.UnauthorizedError("User is not authorized!");
-  //   }
-
-  //   const tokenFromDb = await tokenModel.findOne({
-  //     refreshToken: refreshToken,
-  //   });
-
-  //   if (!tokenFromDb) {
-  //     throw ApiError.UnauthorizedError("User is not authorized!");
-  //   }
-
-  //   const userData = await userModel
-  //     .findOne({ _id: tokenFromDb.user })
-  //     .populate({
-  //       path: "tasks",
-  //       match: { important: true },
-  //     })
-  //     .exec();
-
-  //   if (!userData) {
-  //     throw ApiError.BadRequest("User not found!");
-  //   }
-
-  //   return userData.tasks;
-  // }
-
-  // async getCompletedTasks(refreshToken) {
-  //   if (!refreshToken) {
-  //     throw ApiError.UnauthorizedError("User is not authorized!");
-  //   }
-
-  //   const tokenFromDb = await tokenModel.findOne({
-  //     refreshToken: refreshToken,
-  //   });
-
-  //   if (!tokenFromDb) {
-  //     throw ApiError.UnauthorizedError("User is not authorized!");
-  //   }
-
-  //   const userData = await userModel
-  //     .findOne({ _id: tokenFromDb.user })
-  //     .populate({
-  //       path: "tasks",
-  //       match: { isCompleted: true },
-  //     })
-  //     .exec();
-
-  //   if (!userData) {
-  //     throw ApiError.BadRequest("User not found!");
-  //   }
-
-  //   return userData.tasks;
-  // }
 }
 
 module.exports = new TaskService();
