@@ -12,6 +12,7 @@ import {
 
 const initialState = {
   tasks: [],
+  isLoading: false,
 };
 
 export const taskStore = createSlice({
@@ -21,6 +22,7 @@ export const taskStore = createSlice({
   extraReducers: (builder) => {
     builder.addCase(getAllTasks.pending, (state) => {
       state.isLoading = true;
+      toast.loading("Loading all tasks");
     });
     builder.addCase(getAllTasks.fulfilled, (state, { payload }) => {
       state.tasks = payload;
@@ -33,6 +35,7 @@ export const taskStore = createSlice({
 
     builder.addCase(createTask.pending, (state) => {
       state.isLoading = true;
+      toast.loading("Creating a task");
     });
     builder.addCase(createTask.fulfilled, (state, { payload }) => {
       state.tasks = payload;
@@ -46,6 +49,7 @@ export const taskStore = createSlice({
 
     builder.addCase(taskUpdate.pending, (state) => {
       state.isLoading = true;
+      toast.loading("Updating a task");
     });
     builder.addCase(taskUpdate.fulfilled, (state, { payload }) => {
       state.tasks = payload;
@@ -59,6 +63,7 @@ export const taskStore = createSlice({
 
     builder.addCase(toggleTaskComplete.pending, (state) => {
       state.isLoading = true;
+      toast.loading("Toggling a task");
     });
     builder.addCase(toggleTaskComplete.fulfilled, (state, { payload }) => {
       state.tasks = payload;
@@ -71,6 +76,7 @@ export const taskStore = createSlice({
 
     builder.addCase(taskRemove.pending, (state) => {
       state.isLoading = true;
+      toast.loading("Removiang a task");
     });
     builder.addCase(taskRemove.fulfilled, (state, { payload }) => {
       state.tasks = payload;
@@ -84,6 +90,7 @@ export const taskStore = createSlice({
 
     builder.addCase(getImportantTasks.pending, (state) => {
       state.isLoading = true;
+      toast.loading("Loading important tasks");
     });
     builder.addCase(getImportantTasks.fulfilled, (state, { payload }) => {
       state.tasks = payload;
@@ -96,6 +103,7 @@ export const taskStore = createSlice({
 
     builder.addCase(getCompletedTasks.pending, (state) => {
       state.isLoading = true;
+      toast.loading("Loading completed tasks");
     });
     builder.addCase(getCompletedTasks.fulfilled, (state, { payload }) => {
       state.tasks = payload;

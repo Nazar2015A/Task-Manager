@@ -20,6 +20,7 @@ export const userStore = createSlice({
   extraReducers: (builder) => {
     builder.addCase(userLogin.pending, (state) => {
       state.isLoading = true;
+      toast.loading("User login")
     });
     builder.addCase(userLogin.fulfilled, (state, { payload }) => {
       state.user = payload.user;
@@ -33,6 +34,7 @@ export const userStore = createSlice({
 
     builder.addCase(userRegistration.pending, (state) => {
       state.isLoading = true;
+      toast.loading("Registration user")
     });
     builder.addCase(userRegistration.fulfilled, (state, { payload }) => {
       state.user = payload.user;
@@ -59,6 +61,7 @@ export const userStore = createSlice({
 
     builder.addCase(userCheckAuth.pending, (state) => {
       state.isLoading = true;
+      toast.loading("loading user data")
     });
     builder.addCase(userCheckAuth.fulfilled, (state, { payload }) => {
       state.user = payload;
