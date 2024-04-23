@@ -13,7 +13,7 @@ const root = createRoot(container);
 root.render(
   <ThemeProvider theme={darkTheme}>
     <Provider store={store}>
-      <Toaster position="top-center" toastOptions={{ duration: 3000 }} />
+      <Toaster position="top-center" />
       <App />
     </Provider>
   </ThemeProvider>

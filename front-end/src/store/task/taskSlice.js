@@ -27,9 +27,11 @@ export const taskStore = createSlice({
     builder.addCase(getAllTasks.fulfilled, (state, { payload }) => {
       state.tasks = payload;
       state.isLoading = false;
+      toast.dismiss();
     });
     builder.addCase(getAllTasks.rejected, (state, action) => {
       state.isLoading = false;
+      toast.dismiss();
       toast.error(action.payload);
     });
 
@@ -40,10 +42,12 @@ export const taskStore = createSlice({
     builder.addCase(createTask.fulfilled, (state, { payload }) => {
       state.tasks = payload;
       state.isLoading = false;
+      toast.dismiss();
       toast.success("Task was successfull created");
     });
     builder.addCase(createTask.rejected, (state, action) => {
       state.isLoading = false;
+      toast.dismiss();
       toast.error(action.payload);
     });
 
@@ -54,6 +58,7 @@ export const taskStore = createSlice({
     builder.addCase(taskUpdate.fulfilled, (state, { payload }) => {
       state.tasks = payload;
       state.isLoading = false;
+      toast.dismiss();
       toast.success("Task was successfull updated");
     });
     builder.addCase(taskUpdate.rejected, (state, action) => {
@@ -68,9 +73,11 @@ export const taskStore = createSlice({
     builder.addCase(toggleTaskComplete.fulfilled, (state, { payload }) => {
       state.tasks = payload;
       state.isLoading = false;
+      toast.dismiss();
     });
     builder.addCase(toggleTaskComplete.rejected, (state, action) => {
       state.isLoading = false;
+      toast.dismiss();
       toast.error(action.payload);
     });
 
@@ -81,10 +88,12 @@ export const taskStore = createSlice({
     builder.addCase(taskRemove.fulfilled, (state, { payload }) => {
       state.tasks = payload;
       state.isLoading = false;
+      toast.dismiss();
       toast.success("Task was successfull removed");
     });
     builder.addCase(taskRemove.rejected, (state, action) => {
       state.isLoading = false;
+      toast.dismiss();
       toast.error(action.payload);
     });
 
@@ -95,9 +104,11 @@ export const taskStore = createSlice({
     builder.addCase(getImportantTasks.fulfilled, (state, { payload }) => {
       state.tasks = payload;
       state.isLoading = false;
+      toast.dismiss();
     });
     builder.addCase(getImportantTasks.rejected, (state, action) => {
       state.isLoading = false;
+      toast.dismiss();
       toast.error(action.payload);
     });
 
@@ -108,9 +119,11 @@ export const taskStore = createSlice({
     builder.addCase(getCompletedTasks.fulfilled, (state, { payload }) => {
       state.tasks = payload;
       state.isLoading = false;
+      toast.dismiss();
     });
     builder.addCase(getCompletedTasks.rejected, (state, action) => {
       state.isLoading = false;
+      toast.dismiss();
       toast.error(action.payload);
     });
   },

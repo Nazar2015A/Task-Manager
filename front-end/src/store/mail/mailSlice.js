@@ -10,22 +10,26 @@ export const mailStore = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(mailForgotPassword.pending, () => {
-      toast.loading("Sending email")
+      toast.loading("Sending email");
     });
     builder.addCase(mailForgotPassword.fulfilled, () => {
+      toast.dismiss();
       toast.success("Success. Please check your email");
     });
     builder.addCase(mailForgotPassword.rejected, (state, action) => {
+      toast.dismiss();
       toast.error(action.payload);
     });
-    
+
     builder.addCase(mailResetPassword.pending, () => {
-      toast.loading("Sending email")
+      toast.loading("Sending email");
     });
     builder.addCase(mailResetPassword.fulfilled, () => {
+      toast.dismiss();
       toast.success("Your password was successfully reseted");
     });
     builder.addCase(mailResetPassword.rejected, (state, action) => {
+      toast.dismiss();
       toast.error(action.payload);
     });
   },
