@@ -67,7 +67,6 @@ export const userStore = createSlice({
     });
     builder.addCase(userCheckAuth.rejected, (state) => {
       state.isLoading = false;
-      toast.error(action.payload);
     });
   },
 });
