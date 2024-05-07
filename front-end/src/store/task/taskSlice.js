@@ -29,6 +29,7 @@ export const taskStore = createSlice({
     });
     builder.addCase(getAllTasks.rejected, (state, action) => {
       state.isLoading = false;
+      toast.error(action.payload);
     });
 
     builder.addCase(createTask.pending, (state) => {
@@ -40,6 +41,7 @@ export const taskStore = createSlice({
     });
     builder.addCase(createTask.rejected, (state, action) => {
       state.isLoading = false;
+      toast.error(action.payload);
     });
 
     builder.addCase(taskUpdate.pending, (state) => {
@@ -51,6 +53,7 @@ export const taskStore = createSlice({
     });
     builder.addCase(taskUpdate.rejected, (state, action) => {
       state.isLoading = false;
+      toast.error(action.payload);
     });
 
     builder.addCase(toggleTaskComplete.pending, (state) => {
@@ -62,6 +65,7 @@ export const taskStore = createSlice({
     });
     builder.addCase(toggleTaskComplete.rejected, (state, action) => {
       state.isLoading = false;
+      toast.error(action.payload);
     });
 
     builder.addCase(taskRemove.pending, (state) => {
@@ -73,6 +77,7 @@ export const taskStore = createSlice({
     });
     builder.addCase(taskRemove.rejected, (state, action) => {
       state.isLoading = false;
+      toast.error(action.payload);
     });
 
     builder.addCase(getImportantTasks.pending, (state) => {
@@ -84,6 +89,7 @@ export const taskStore = createSlice({
     });
     builder.addCase(getImportantTasks.rejected, (state, action) => {
       state.isLoading = false;
+      toast.error(action.payload);
     });
 
     builder.addCase(getCompletedTasks.pending, (state) => {
@@ -95,6 +101,7 @@ export const taskStore = createSlice({
     });
     builder.addCase(getCompletedTasks.rejected, (state, action) => {
       state.isLoading = false;
+      toast.error(action.payload);
     });
   },
 });

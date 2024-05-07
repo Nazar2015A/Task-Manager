@@ -9,18 +9,16 @@ export const mailStore = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(mailForgotPassword.pending, () => {
-    });
-    builder.addCase(mailForgotPassword.fulfilled, () => {
-    });
+    builder.addCase(mailForgotPassword.pending, () => {});
+    builder.addCase(mailForgotPassword.fulfilled, () => {});
     builder.addCase(mailForgotPassword.rejected, (state, action) => {
+      toast.error(action.payload);
     });
 
-    builder.addCase(mailResetPassword.pending, () => {
-    });
-    builder.addCase(mailResetPassword.fulfilled, () => {
-    });
+    builder.addCase(mailResetPassword.pending, () => {});
+    builder.addCase(mailResetPassword.fulfilled, () => {});
     builder.addCase(mailResetPassword.rejected, (state, action) => {
+      toast.error(action.payload);
     });
   },
 });

@@ -28,6 +28,7 @@ export const userStore = createSlice({
     });
     builder.addCase(userLogin.rejected, (state, action) => {
       state.isLoading = false;
+      toast.error(action.payload);
     });
 
     builder.addCase(userRegistration.pending, (state) => {
@@ -40,6 +41,7 @@ export const userStore = createSlice({
     });
     builder.addCase(userRegistration.rejected, (state, action) => {
       state.isLoading = false;
+      toast.error(action.payload);
     });
 
     builder.addCase(userLogout.pending, (state) => {
@@ -52,6 +54,7 @@ export const userStore = createSlice({
     });
     builder.addCase(userLogout.rejected, (state, action) => {
       state.isLoading = false;
+      toast.error(action.payload);
     });
 
     builder.addCase(userCheckAuth.pending, (state) => {
@@ -64,6 +67,7 @@ export const userStore = createSlice({
     });
     builder.addCase(userCheckAuth.rejected, (state) => {
       state.isLoading = false;
+      toast.error(action.payload);
     });
   },
 });
