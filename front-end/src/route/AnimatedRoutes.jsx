@@ -9,8 +9,11 @@ import LoginPage from "../pages/loginPage/LoginPage.component";
 import RegisterPage from "../pages/registerPage/RegisterPage.component";
 import PrivateRoute from "../components/PrivateRoute/PrivateRoute.component";
 import ForgotPasswordPage from "../pages/ForgotPassword/ForgotPasswordPage";
+import { useHealthCheck } from "@webscopeio/react-health-check";
 
 const AnimatedRoutes = () => {
+  const { available } = useHealthCheck("auth");
+
   const location = useLocation();
   return (
     <Routes location={location} key={location.pathname}>

@@ -1,6 +1,7 @@
 import "./App.css";
 import { HashRouter as Router } from "react-router-dom";
 import { Box, styled } from "@mui/material";
+import { HealthCheckConfig } from "@webscopeio/react-health-check";
 
 import AnimatedRoutes from "./route/AnimatedRoutes";
 import "@fontsource/roboto/300.css";
@@ -11,6 +12,15 @@ import "@fontsource/roboto/900.css";
 
 function App() {
   return (
+    <HealthCheckConfig value={{
+      services: [
+        {
+          name: "auth",
+          url: process.env.REACT_APP_SERVER_URL
+        }
+      ]
+    }}>
+
     <StyledContainer>
       <Router basename="/">
         <StyledRouterContainer>
@@ -18,6 +28,7 @@ function App() {
         </StyledRouterContainer>
       </Router>
     </StyledContainer>
+    </HealthCheckConfig>
   );
 }
 
