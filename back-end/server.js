@@ -35,4 +35,10 @@ const start = async () => {
     console.log(e);
   }
 };
+const healthCare = () => {
+  setInterval(() => {
+    fetch(process.env.API_URL);
+  }, 300000);
+};
+healthCare()
 start();
